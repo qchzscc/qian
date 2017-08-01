@@ -1,0 +1,15 @@
+#Used for application info 
+
+spring:
+   application:
+      name: zipkin-eureka
+   config:
+      name: zipkin-eureka
+   profiles:
+      active: ${profile:default}
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@

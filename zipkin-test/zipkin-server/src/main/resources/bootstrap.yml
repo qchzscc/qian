@@ -1,0 +1,14 @@
+#Used for application info 
+
+spring:
+  application:
+    name: zipkin-server
+  config:
+    name: zipkin-server
+  profiles:
+    active: ${profile:default}
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    version: @project.version@
