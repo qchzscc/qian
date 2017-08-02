@@ -1,6 +1,6 @@
 #Used for server port    
 server:
-  port: ${port:9401}
+  port: ${port:9411}
   
 #Used for eureka config
 eureka:
@@ -13,7 +13,7 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 13
     prefer-ip-address: true
-
+spring:
   sleuth:
     enabled: false
 
@@ -24,7 +24,7 @@ zipkin:
     type: elasticsearch
     storage:
       elasticsearch:
-        hosts: localhost:9200
+        hosts: http://127.0.0.1:9200
         index: zipkin
         index-shards: 5
         index-replicas: 1 
@@ -42,7 +42,7 @@ endpoints:
   shutdown:
     enabled: true
     
-logging:
-  config: 
-    classpath: "logback-spring.xml"
-  file:  ${spring.application.name}.log  
+#logging:
+#  config: 
+#    classpath: "logback-spring.xml"
+#  file:  ${spring.application.name}.log  
