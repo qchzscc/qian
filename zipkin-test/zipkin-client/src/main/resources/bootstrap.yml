@@ -2,13 +2,35 @@
 
 spring:
   application:
-    name: zipkin-client
+    name: zipkin-client00
   config:
-    name: zipkin-client
+    name: zipkin-client00
   profiles:
     active: ${profile:default}
+  zipkin:
+    base-url: http://10.143.128.61:9411/
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0
 info:
   build:
     artifact: @project.artifactId@
     name: @project.name@
     version: @project.version@
+    
+server:
+  port: ${port:9002}
+  
+#Used for eureka config
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    lease-renewal-interval-in-seconds: 5
+#    lease-expiration-duration-in-seconds: 13
+#    prefer-ip-address: true
+
